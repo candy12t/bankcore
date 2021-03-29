@@ -62,3 +62,13 @@ func (a *Account) Transfer(amount float64, dest *Account) error {
 	dest.Deposit(amount)
 	return nil
 }
+
+// Bank ...
+type Bank interface {
+	Statement() string
+}
+
+// Statement ...
+func Statement(b Bank) string {
+	return b.Statement()
+}
